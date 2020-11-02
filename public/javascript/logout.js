@@ -1,3 +1,6 @@
+var timeoutID;
+var warningID;
+
 async function logout() {
     const response = await fetch('/api/users/logout', {
         method: 'post',
@@ -10,11 +13,6 @@ async function logout() {
         alert(response.statusText);
     }
 }
-
-document.querySelector('#logout').addEventListener('click', logout);
-
-var timeoutID;
-var warningID;
 
 function setup() {
     this.addEventListener("mousemove", resetTimer, false);
@@ -44,3 +42,5 @@ function resetTimer(e) {
 function goInactive() {
     logout();
 }
+
+document.querySelector('#logout').addEventListener('click', logout);

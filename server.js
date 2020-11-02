@@ -29,6 +29,7 @@ app.use(session(sess));
 
 // turn on routes
 app.use(routes);
+// set template engine
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
