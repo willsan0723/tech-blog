@@ -7,7 +7,7 @@
             <input type="text" id="post-title" name="post-title" />
         </div>
         <div>
-            <label for="post-text">Post Text</label>
+            <label for="post-text">Contents</label>
             <textarea id="post-text" name="post-text"></textarea>
         </div>
         <button type="submit" class="btn">Create</button>
@@ -20,8 +20,9 @@
     <ol>
         {{#each posts as |post|}}
         <li>
-            {{> post-info post}}
-            <a href="/dashboard/edit/{{post.id}}" class="edit-link">Edit post</a>
+            <a href="/dashboard/edit/{{post.id}}" class="edit-link" style="text-decoration: none; color: inherit;">
+                {{> post-info post}}
+            </a>
         </li>
         {{/each}}
     </ol>
